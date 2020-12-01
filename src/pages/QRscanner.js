@@ -14,23 +14,28 @@ function QRscanner() {
   const handleError = (err) => {
     console.error(err);
   };
-
-  if (navigator.getUserMedia) {
-    navigator.getUserMedia(
-      {
-        video: true,
-      },
-      function (localMediaStream) {},
-      function (err) {
-        alert(
-          "The following error occurred when trying to access the camera: " +
-            err
-        );
-      }
-    );
+  if ("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices) {
+    alert("Let's get this party started");
   } else {
-    alert("Sorry, browser does not support camera access");
+    alert("Sorry, browser does not support getMedia");
   }
+
+  //   if (navigator.getUserMedia) {
+  //     navigator.getUserMedia(
+  //       {
+  //         video: true,
+  //       },
+  //       function (localMediaStream) {},
+  //       function (err) {
+  //         alert(
+  //           "The following error occurred when trying to access the camera: " +
+  //             err
+  //         );
+  //       }
+  //     );
+  //   } else {
+  //     alert("Sorry, browser does not support camera access");
+  //   }
 
   return (
     <div>
