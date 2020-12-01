@@ -33,14 +33,14 @@ function QRscanner() {
   // }
 
   if (!navigator.mediaDevices || navigator.mediaDevices.enumerateDevices) {
-    alert("enumerateDevices() not supporte");
+    alert("enumerateDevices() not supported");
   }
 
   navigator.mediaDevices
     .enumerateDevices()
     .then((devices) => {
       devices.forEach(function (device) {
-        console.log(
+        alert(
           device.kind + ": " + device.label + " id = " + device.deviceId
         );
       });
