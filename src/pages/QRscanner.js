@@ -15,6 +15,23 @@ function QRscanner() {
     console.error(err);
   };
 
+  if (navigator.getUserMedia) {
+    navigator.getUserMedia(
+      {
+        video: true,
+      },
+      function (localMediaStream) {},
+      function (err) {
+        alert(
+          "The following error occurred when trying to access the camera: " +
+            err
+        );
+      }
+    );
+  } else {
+    alert("Sorry, browser does not support camera access");
+  }
+
   return (
     <div>
       <Link to="/">
@@ -25,7 +42,7 @@ function QRscanner() {
       <span>QR Scanner</span>
 
       <center>
-        {/* <div style={{ marginTop: 30 }}>
+        <div style={{ marginTop: 30 }}>
           <QrScan
             delay={300}
             facingMode={"user" | "environment"}
@@ -33,7 +50,7 @@ function QRscanner() {
             onScan={handleScan}
             style={{ height: 240, width: 320 }}
           />
-        </div> */}
+        </div>
       </center>
 
       <TextareaAutosize
