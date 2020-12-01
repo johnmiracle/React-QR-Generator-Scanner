@@ -32,9 +32,9 @@ function QRscanner() {
   //   alert("Sorry, browser does not support camera access");
   // }
 
-  if (!navigator.mediaDevices || navigator.mediaDevices.enumerateDevices) {
-    alert("enumerateDevices() not supported");
-  }
+//   if (!navigator.mediaDevices || navigator.mediaDevices.enumerateDevices) {
+//     alert("enumerateDevices() not supported");
+//   }
 
   navigator.mediaDevices
     .enumerateDevices()
