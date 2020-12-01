@@ -25,7 +25,7 @@ function QRscanner() {
       <span>QR Scanner</span>
 
       <center>
-        <div style={{ marginTop: 30 }}>
+        {/* <div style={{ marginTop: 30 }}>
           <QrScan
             delay={300}
             facingMode={"user" | "environment"}
@@ -33,7 +33,7 @@ function QRscanner() {
             onScan={handleScan}
             style={{ height: 240, width: 320 }}
           />
-        </div>
+        </div> */}
       </center>
 
       <TextareaAutosize
