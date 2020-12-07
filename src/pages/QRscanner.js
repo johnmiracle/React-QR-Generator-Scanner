@@ -15,40 +15,6 @@ function QRscanner() {
     console.error(err);
   };
 
-  // if (navigator.getUserMedia) {
-  //   navigator.mediaDevices.getUserMedia(
-  //     {
-  //       video: true,
-  //     },
-  //     function (localMediaStream) {},
-  //     function (err) {
-  //       alert(
-  //         "The following error occurred when trying to access the camera: " +
-  //           err
-  //       );
-  //     }
-  //   );
-  // } else {
-  //   alert("Sorry, browser does not support camera access");
-  // }
-
-//   if (!navigator.mediaDevices || navigator.mediaDevices.enumerateDevices) {
-//     alert("enumerateDevices() not supported");
-//   }
-
-  navigator.mediaDevices
-    .enumerateDevices()
-    .then((devices) => {
-      devices.forEach(function (device) {
-        alert(
-          device.kind + ": " + device.label + " id = " + device.deviceId
-        );
-      });
-    })
-    .catch((err) => {
-      console.log(err.name + ": " + err.message);
-    });
-
   return (
     <div>
       <Link to="/">
